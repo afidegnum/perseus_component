@@ -1,16 +1,17 @@
+use crate::components::footer::FooterWidget;
 use perseus::{make_rx, Html, RenderFnResultWithCause, SsrNode, Template};
 use serde::{Deserialize, Serialize};
 use sycamore::prelude::*;
 use sycamore::prelude::{view, View};
 
-use crate::components::menu::MenuWidget;
-
-#[perseus::template_rx]
+// #[perseus::template_rx]
+#[perseus::template(IndexPage)]
+#[component(IndexPage<G>)]
 pub fn index_page<G: Html>(cx: Scope) -> View<G> {
     view! { cx,
 
                 div (class="line") {
-    MenuWidget()
+    FooterWidget()
         }
                 div (class="line") {}
             }
